@@ -11,9 +11,8 @@ const int kMaxComposers = 100;
 class Database {
  public:
   Database(): composers_(), next_slot_(0){}
-	~Database(){}
+  ~Database(){}
   // Add a new composer using operations in the Composer class.
-  // For convenience, we return a reference (pointer) to the new record.
   Composer& AddComposer(string in_first_name, string in_last_name, string in_genre, int in_yob, string in_fact){
 		if (next_slot_ < 99){
 			Composer &composer = composers_[next_slot_];
@@ -28,8 +27,7 @@ class Database {
 			cout << "You cannot add more than 100 composers." << endl;
 		}			
 	}												
-  // Search for a composer based on last name. Return a reference to the
-  // found record.
+  // Search for a composer based on last name. Return a reference to the found record.
   Composer& GetComposer(string in_last_name){
 		for(int i=0;i<next_slot_;i++){
 			transform(in_last_name.begin(), in_last_name.end(), in_last_name.begin(), ::tolower);
@@ -40,7 +38,7 @@ class Database {
 			}
 		}
 	}
-	
+  // Set a composer ranking based on last name. 	
 	Composer& SetRanking(string in_last_name, int in_ranking){
 		for(int i=0;i<next_slot_;i++){
 			transform(in_last_name.begin(), in_last_name.end(), in_last_name.begin(), ::tolower);

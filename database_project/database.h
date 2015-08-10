@@ -48,6 +48,8 @@ class Database {
 			transform(name.begin(), name.end(), name.begin(), ::tolower); 
 			if (name == in_last_name){
 				composers_[i].set_ranking(in_ranking);
+			} else {
+				cout << "Could not find that composer" << endl;
 			}
 		}
 	}

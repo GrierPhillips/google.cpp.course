@@ -14,8 +14,7 @@ class Database {
 	~Database(){}
   // Add a new composer using operations in the Composer class.
   // For convenience, we return a reference (pointer) to the new record.
-  Composer& AddComposer(string in_first_name, string in_last_name, 
-												string in_genre, int in_yob, string in_fact){
+  Composer& AddComposer(string in_first_name, string in_last_name, string in_genre, int in_yob, string in_fact){
 		if (next_slot_ < 99){
 			Composer &composer = composers_[next_slot_];
 			composer.set_first_name(in_first_name);
